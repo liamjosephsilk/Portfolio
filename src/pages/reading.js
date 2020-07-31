@@ -2,7 +2,6 @@ import React from "react"
 
 import Layout from "../components/layout"
 
-import Card from "../components/Card"
 import SEO from "../components/seo"
 import { IndexWrapper } from "../lib/styles"
 

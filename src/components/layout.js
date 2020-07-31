@@ -8,8 +8,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import Header from "./Header"
-import Navigation from "./Navigation"
+import Header from "../components/Header"
+import Navigation from "../components/Navigation"
 import SEO from "./seo.js"
 import { GlobalStyle, StyledLayout, StyledMain } from "../lib/styles"
 
