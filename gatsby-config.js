@@ -1,3 +1,7 @@
+require(`dotenv`).config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `| Front End Web Developer`,
@@ -10,8 +14,7 @@ module.exports = {
       options: {
         typeName: "GraphCMS",
         fieldName: "graphcms",
-        url:
-          "https://api-eu-central-1.graphcms.com/v2/ckb183wlo0bdo01yxglnvh8wn/master",
+        url: process.env.GRAPHCMS_API,
       },
     },
     `gatsby-plugin-styled-components`,
