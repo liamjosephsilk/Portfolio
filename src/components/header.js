@@ -1,42 +1,28 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import Logo from "../components/logo"
+import {
+  StyledHeader,
+  StyledInfo,
+  StyledSocialList,
+  StyledSocialLink,
+} from "../lib/styles"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+const Header = () => {
+  return (
+    <StyledHeader>
+      <Logo />
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+      <StyledInfo>
+        Hi, I'm Liam Silk. A Front End Developer based in the UK. I am
+        passionate about modern Front End technologies such as React, GraphQL as
+        well as serverless and JAMstack.
+      </StyledInfo>
+      <StyledSocialList>
+        <StyledSocialLink href="https://twitter.com">H</StyledSocialLink>
+        <StyledSocialLink href="https://twitter.com">H</StyledSocialLink>
+        <StyledSocialLink href="https://twitter.com">H</StyledSocialLink>
+      </StyledSocialList>
+    </StyledHeader>
+  )
 }
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
 export default Header
