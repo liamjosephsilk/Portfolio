@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import BlogLayout from "../components/Bloglayout"
+import BlogLayout from "../components/BlogLayout"
 import CodeBlock from "../components/CodeBlock"
 import ReactMarkdown from "react-markdown"
 
