@@ -15,7 +15,28 @@ const PostPage = ({
   return (
     <BlogLayout>
       <SEO title={`${post.title} | | Liam Silk`} />
-      <Link to="/">Back</Link>
+      <Link to="/">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 33 53"
+        >
+          <g id="Group_1" data-name="Group 1" transform="translate(-563 -146)">
+            <path
+              id="Union_1"
+              data-name="Union 1"
+              d="M0,24,28,48ZM28,0,0,24Z"
+              transform="translate(565.5 148.5)"
+              fill="none"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="7"
+            />
+          </g>
+        </svg>
+      </Link>
       <h1>{post.title}</h1>
       <ReactMarkdown
         source={post.bodyMarkdown}
