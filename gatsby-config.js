@@ -7,8 +7,16 @@ module.exports = {
     title: `| Front End Web Developer`,
     description: `Personal blog for Front End Developer Liam Silk. Based in Kingston Upon Hull, United Kingdom.`,
     author: ``,
+    siteUrl: "https://www.liamsilk.dev",
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      oprions: {
+        host: `https://www.liamsilk.dev`,
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     {
       resolve: `gatsby-source-graphql`,
       options: {
