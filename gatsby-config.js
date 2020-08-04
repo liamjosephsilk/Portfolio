@@ -10,6 +10,8 @@ module.exports = {
     siteUrl: "https://www.liamsilk.dev",
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
+
     {
       resolve: `gatsby-plugin-robots-txt`,
       oprions: {
