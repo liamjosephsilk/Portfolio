@@ -53,6 +53,32 @@ h3 {
     margin: 1rem 0;
 }
 
+a {
+  color: white;
+  text-decoration: underline;
+
+}
+
+a:hover {
+  color: grey;
+}
+
+ul {
+  margin: 2rem 0;
+  list-style: disc;
+}
+
+li {
+  letter-spacing: 0.04rem;
+  font-size: 1.125rem;
+  color: #eee;  
+  font-weight: 300;
+  list-style:   disc;
+  
+}
+
+
+
 
 @media screen and (max-width: 425px) {
   body {
@@ -241,9 +267,11 @@ export const StyledListItem = styled.li`
   height: 100%;
   display: flex;
   margin-right: 2rem;
-  padding: 0.4rem 0.5rem;
+  padding: 1rem 0.8rem;
   align-items: center;
   transition: background 300ms ease-in-out;
+  font-size: 0.7rem;
+  font-weight: 400;
 
   :hover {
     background: #202022;
