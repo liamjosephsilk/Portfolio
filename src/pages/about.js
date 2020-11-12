@@ -17,12 +17,15 @@ const About = () => {
           A Little About me.
         </SubTitle>
         <PageCopy color="#7E7E7E">
+          Hi there!, I'm Liam and this is my little slice of the web.
+        </PageCopy>
+        <PageCopy color="#7E7E7E">
           I am a Front End Developer building modern user interfaces and front
-          end heavy websites and applications. I focus on building Jamstack
+          end heavy websites and applications. Focusing on building Jamstack
           architectures, fast, scalable and secure products.
         </PageCopy>
         <PageCopy color="#7E7E7E">
-          The technologies I use are React, (Gatsby and Next.js), GraphQl and a
+          The technologies I use are React, (Gatsby and Next.js), GraphQl and
           serverless.
         </PageCopy>
         <PageCopy color="#7E7E7E">

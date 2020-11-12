@@ -2,6 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import BlogLayout from "../components/BlogLayout"
 import CodeBlock from "../components/CodeBlock"
+import BlogFooter from "../components/BlogFooter"
+import ScrolledHeader from "../components/ScrolledHeader"
 import ReactMarkdown from "react-markdown"
 import { ArticleTitle } from "../lib/styles"
 
@@ -16,7 +18,8 @@ const PostPage = ({
   return (
     <BlogLayout>
       <SEO title={`${post.title} | | Liam Silk`} />
-      <Link to="/">
+      <ScrolledHeader />
+      <Link to="/articles">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -30,7 +33,7 @@ const PostPage = ({
               d="M0,24,28,48ZM28,0,0,24Z"
               transform="translate(565.5 148.5)"
               fill="none"
-              stroke="#000000"
+              stroke="#5863D8"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="7"
@@ -43,6 +46,7 @@ const PostPage = ({
         source={post.bodyMarkdown}
         renderers={{ code: CodeBlock }}
       />
+      <BlogFooter />
     </BlogLayout>
   )
 }

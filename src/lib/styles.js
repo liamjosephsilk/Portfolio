@@ -52,16 +52,17 @@ h3 {
 }
 
 a {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #4A5568;
   text-decoration: none;
   font-style: italic;
   font-weight: 600;
+  color: #5863D8;
 
 }
 
 a:hover {
-  color: grey;
+  color: #858de1;
 }
 
 ul {
@@ -183,7 +184,6 @@ export const PageCopy = styled.p`
   font-weight: 400;
   width: 50%;
   line-height: 1.8;
-  margin-top: 1rem;
   color: ${props => props.color || "inherit"};
 `
 
@@ -415,7 +415,7 @@ export const ArticleTitle = styled.h1`
 `
 
 export const StyledButton = styled.button`
-  margin-top: 3rem;
+  margin-top: 2rem;
   border: none;
   background: #5863d8;
   padding: 0.8rem 1.2rem;
@@ -433,8 +433,28 @@ export const StyledButtonLink = styled(Link)`
   font-size: 0.8rem;
   text-decoration: none;
   font-family: "Poppins";
+  font-style: normal;
 
   &:hover {
     color: white;
   }
+`
+
+export const StyledBlogFooter = styled.footer`
+  display: flex;
+  height: 100px;
+  background: #fff;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 0;
+  border-radius: 3px;
+`
+
+export const StyledFooterCopy = styled.p`
+  font-family: "IBM Plex Mono";
+  color: black;
+  margin: 0 0.3rem 0 0;
 `
