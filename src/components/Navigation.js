@@ -22,9 +22,9 @@ const Navigation = props => {
           <StyledLink to="/articles" activeClassName="active">
             <StyledListItem>Articles</StyledListItem>
           </StyledLink>
-          <StyledLink to="/reading" activeClassName="active">
+          {/* <StyledLink to="/reading" activeClassName="active">
             <StyledListItem>Reading</StyledListItem>
-          </StyledLink>
+          </StyledLink> */}
         </StyledList>
       </StyledNav>
     </StyledSection>

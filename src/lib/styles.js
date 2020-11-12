@@ -112,6 +112,7 @@ export const SubTitle = styled.h2`
   font-weight: 400;
   color: #7e7e7e;
   font-family: ${props => props.fontFamily || "inherit"};
+  margin-bottom: ${props => props.marginBottom || 0};
 `
 
 export const StyledLayout = styled.div`
@@ -153,6 +154,32 @@ export const IndexWrapper = styled.section`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+`
+
+export const AboutWrapper = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 4rem;
+`
+
+export const ArticlesIndexWrapper = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 4rem;
+`
+
+export const PageCopy = styled.p`
+  font-family: "Poppins";
+  font-size: 1.1rem;
+  font-weight: 400;
+  width: 50%;
+  line-height: 1.8;
+  margin-top: 1rem;
+  color: ${props => props.color || "inherit"};
 `
 
 export const StyledHeading = styled.h3`
@@ -224,31 +251,53 @@ export const StyledSocialLink = styled.a`
 `
 
 export const StyledCard = styled.div`
-  padding: 2rem;
+  padding: 1rem;
   transition: background 400ms ease-in-out;
-  color: black;
-  overflow: hidden;
-  align-self: stretch;
-  justify-self: stretch;
   height: 100%;
-  width: 100%;
+  width: 70%;
   display: flex;
   flex-direction: column;
-
-  :hover {
-    background: #202022;
-    cursor: pointer;
-    color: #fff;
-  }
-
+  justify-content: center;
+  align-items: center;
   ${media.mobile &&
   media.tablet`
     padding: 1rem 0.5rem;
-  `}
+  `};
+`
+
+export const StyledCardLink = styled(Link)`
+  font-size: 1rem;
+  color: #5863d8;
+  text-decoration: none;
+  font-family: "Poppins";
+  transition: color 300ms ease-in-out;
+  font-weight: 500;
+
+  &:hover {
+    color: #858de1;
+  }
+`
+
+export const StyledBreak = styled.div`
+  height: 2px;
+  background: ${props => props.color || "black"};
+  width: 100%;
+  position: relative;
+  margin-bottom: 1rem;
+`
+
+export const StyledBreakSpan = styled.span`
+  height: 2px;
+  width: 10%;
+  background: ${props => props.color || "black"};
+  position: absolute;
+  left: 0;
 `
 export const StyledCardTitle = styled.h2`
-  font-size: 1.1rem;
-  font-weight: 400;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  width: 80%;
 
   ${media.mobile`
     font-size: 1.5rem;
@@ -348,4 +397,29 @@ export const StyledArticle = styled.article`
   ${media.tablet`
     width: 90%;
   `}
+`
+
+export const StyledButton = styled.button`
+  margin-top: 3rem;
+  border: none;
+  background: #5863d8;
+  padding: 0.8rem 1.2rem;
+  border-radius: 4px;
+  transition: background 300ms ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    background: #858de1;
+  }
+`
+
+export const StyledButtonLink = styled(Link)`
+  color: white;
+  font-size: 0.8rem;
+  text-decoration: none;
+  font-family: "Poppins";
+
+  &:hover {
+    color: white;
+  }
 `
