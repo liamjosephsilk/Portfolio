@@ -13,10 +13,16 @@ const Navigation = props => {
     <StyledSection>
       <StyledNav>
         <StyledList>
-          <StyledLink to="/" activeStyle={{ color: "grey" }}>
-            <StyledListItem>Blog</StyledListItem>
+          <StyledLink to="/" activeClassName="active">
+            <StyledListItem>Home</StyledListItem>
           </StyledLink>
-          <StyledLink to="/reading" activeStyle={{ color: "grey" }}>
+          <StyledLink to="/about" activeClassName="active">
+            <StyledListItem>About</StyledListItem>
+          </StyledLink>
+          <StyledLink to="/articles" activeClassName="active">
+            <StyledListItem>Articles</StyledListItem>
+          </StyledLink>
+          <StyledLink to="/reading" activeClassName="active">
             <StyledListItem>Reading</StyledListItem>
           </StyledLink>
         </StyledList>

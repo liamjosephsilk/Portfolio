@@ -10,18 +10,17 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-    background: #151515;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #fff;
+    font-family: "Poppins";
     color: white;
     height: 100vh;
-    overflow-y: hidden;
-    padding: 2rem 0;
+    width: 100vw;
+    padding: 2rem;
+    color: #202123;
 }
 p {
-  margin-bottom: 2rem;
   letter-spacing: 0.04rem;
   font-size: 1.125rem;
-  color: #eee;  
   font-weight: 300;
 }
 
@@ -32,10 +31,9 @@ article {
 
 h1 {
   font-size: 2.5rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.25;
     letter-spacing: 0.03rem;
-    margin: 1rem 0;
 
 }
 h2 {
@@ -50,10 +48,10 @@ h3 {
     font-weight: 600;
     line-height: 1.25;
     letter-spacing: 0.03rem;
-    margin: 1rem 0;
 }
 
 a {
+  font-size: 2.1rem;
   color: white;
   text-decoration: underline;
 
@@ -64,8 +62,11 @@ a:hover {
 }
 
 ul {
-  margin: 2rem 0;
   list-style: disc;
+}
+
+.active li {
+  color: #5863D8;
 }
 
 li {
@@ -73,8 +74,7 @@ li {
   font-size: 1.125rem;
   color: #eee;  
   font-weight: 300;
-  list-style:   disc;
-  
+  list-style:   disc; 
 }
 
 
@@ -94,22 +94,41 @@ li {
 `
 
 export const Title = styled.h1`
-  font-size: ${props => props.fontSize || "4rem"};
-  font-weight: 500;
-  margin-bottom: 2rem;
+  font-size: ${props => props.fontSize || "3rem"};
+  font-weight: 700;
+  width: 30%;
+  line-height: 4rem;
+  text-align: center;
+  font-family: ${props => props.fontFamily || "inherit"};
+`
+
+export const SubTitle = styled.h2`
+  font-size: ${props => props.fontSize || "3rem"};
+  font-weight: 700;
+  width: 30%;
+  margin-top: -0.2rem;
+  line-height: 2rem;
+  text-align: center;
+  font-weight: 400;
+  color: #7e7e7e;
+  font-family: ${props => props.fontFamily || "inherit"};
 `
 
 export const StyledLayout = styled.div`
   display: flex;
-  width: 90%;
-  margin: 4rem auto;
-  padding-bottom: 4rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  
 
   ${media.desktop`
-    width: 70%;
+    width: 100%;
   `}
   ${media.laptop`
-  width: 90%;`}
+    width: 100%;
+    align-items: center;
+    `}
 
   ${media.tablet`
     width: 85%;
@@ -124,28 +143,29 @@ export const StyledLayout = styled.div`
 `
 
 export const StyledMain = styled.main`
-  width: 50%;
-  height: 80vh;
-
-  overflow-y: scroll;
-  ::-webkit-scrollbar {
-    display: none;
-  }
-
-  ${media.mobile &&
-  media.tablet`
-    width: 100%;
-    overflow: hidden;
-    height: 100%;
-  `}
+  width: 100%;
+  height: 100%;
+  margin-top: 2rem;
 `
-export const IndexWrapper = styled.section``
-export const StyledHeader = styled.header`
-  width: 50%;
-  padding-right: 8rem;
-  height: 80vh;
+export const IndexWrapper = styled.section`
+  height: 70vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+`
+
+export const StyledHeading = styled.h3`
+  font-size: 1rem;
+`
+
+export const StyledSpan = styled.span`
+  font-weight: 200;
+`
+export const StyledHeader = styled.header`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
   ${media.smLaptop`
     padding-right: 2rem;
@@ -158,7 +178,7 @@ export const StyledHeader = styled.header`
     height: 40vh;
 
     margin-bottom: 2rem;
-    
+
   `}
 `
 
@@ -166,6 +186,8 @@ export const StyledInfo = styled.p`
   font-size: 1.5rem;
   color: grey;
   line-height: 2;
+  width: 30%;
+  height: fit-content;
 
   ${media.smLaptop`
     font-size: 1.4rem;
@@ -179,8 +201,7 @@ export const StyledInfo = styled.p`
     line-height: 1.4;
     font-size: 1.1rem;
     padding: 0 0.5rem;
-  
-     
+
   `}
 `
 
@@ -204,19 +225,29 @@ export const StyledSocialLink = styled.a`
 
 export const StyledCard = styled.div`
   padding: 2rem;
-  border-bottom: 1px solid #202022;
-  transition: background 300ms ease-in-out;
+  transition: background 400ms ease-in-out;
+  color: black;
+  overflow: hidden;
+  align-self: stretch;
+  justify-self: stretch;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
   :hover {
     background: #202022;
     cursor: pointer;
+    color: #fff;
   }
+
   ${media.mobile &&
   media.tablet`
     padding: 1rem 0.5rem;
   `}
 `
 export const StyledCardTitle = styled.h2`
-  font-size: 2rem;
+  font-size: 1.1rem;
   font-weight: 400;
 
   ${media.mobile`
@@ -247,16 +278,12 @@ export const StyledDesc = styled.p`
 `
 
 export const StyledSection = styled.section`
-  width: 100%;
-  position: sticky;
-  top: 0;
-  margin-bottom: 2rem;
-  background: #151515;
+  width: 30%;
 `
 
 export const StyledNav = styled.nav`
   display: flex;
-  height: 3rem;
+  justify-content: flex-end;
 `
 
 export const StyledList = styled.ul`
@@ -264,39 +291,42 @@ export const StyledList = styled.ul`
 `
 
 export const StyledListItem = styled.li`
-  height: 100%;
   display: flex;
-  margin-right: 2rem;
-  padding: 1rem 0.8rem;
-  align-items: center;
   transition: background 300ms ease-in-out;
-  font-size: 0.7rem;
-  font-weight: 400;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #bdbdbd;
+  margin-right: 1rem;
 
   :hover {
-    background: #202022;
     cursor: pointer;
+    color: #5863d8;
   }
 `
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: inherit;
-  text-transform: uppercase;
+  color: #202123;
   font-weight: 500;
-  font-size: 0.7rem;
   letter-spacing: 0.07rem;
+
+  &.active {
+    color: blue;
+  }
 `
 
 export const StyledLogoBox = styled.div`
   font-weight: 700;
-  font-size: 2rem;
-
-  padding: 1rem;
+  font-size: 1.3rem;
+  background: #202123;
+  letter-spacing: 0.03rem;
   width: fit-content;
+  padding: 10rem;
+  color: #fff;
   transition: background 300ms ease-in-out;
   :hover {
-    background: #202022;
+    background: #fff;
+    color: #202123;
     cursor: pointer;
   }
 
