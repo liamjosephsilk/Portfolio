@@ -19,9 +19,11 @@ body {
     color: #202123;
 }
 p {
-  letter-spacing: 0.04rem;
-  font-size: 1.125rem;
-  font-weight: 300;
+  letter-spacing: 0.03rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #4A5568;
+  margin-bottom: 1rem;
 }
 
 article {
@@ -34,11 +36,10 @@ h1 {
     font-weight: 500;
     line-height: 1.25;
     letter-spacing: 0.03rem;
-
 }
 h2 {
-  font-size: 2.1rem;
-    font-weight: 600;
+  font-size: 1.9rem;
+    font-weight: 700;
     line-height: 1.25;
     letter-spacing: 0.03rem;
     margin: 1rem 0;
@@ -51,9 +52,11 @@ h3 {
 }
 
 a {
-  font-size: 2.1rem;
-  color: white;
-  text-decoration: underline;
+  font-size: 1.1rem;
+  color: #4A5568;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: 600;
 
 }
 
@@ -63,6 +66,7 @@ a:hover {
 
 ul {
   list-style: disc;
+  margin: 1rem 0;
 }
 
 .active li {
@@ -70,11 +74,12 @@ ul {
 }
 
 li {
-  letter-spacing: 0.04rem;
-  font-size: 1.125rem;
-  color: #eee;  
-  font-weight: 300;
+  letter-spacing: 0.03rem;
+  font-size: 1rem;
+  color: #4A5568;
+  font-weight: 400;
   list-style:   disc; 
+  
 }
 
 
@@ -272,6 +277,7 @@ export const StyledCardLink = styled(Link)`
   font-family: "Poppins";
   transition: color 300ms ease-in-out;
   font-weight: 500;
+  font-style: normal;
 
   &:hover {
     color: #858de1;
@@ -355,6 +361,7 @@ export const StyledListItem = styled.li`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
+  font-style: normal;
   color: #202123;
   font-weight: 500;
   letter-spacing: 0.07rem;
@@ -362,6 +369,12 @@ export const StyledLink = styled(Link)`
   &.active {
     color: blue;
   }
+`
+
+export const StyleLinkActive = styled.div`
+  height: 5px;
+  width: 5px;
+  background: black;
 `
 
 export const StyledLogoBox = styled.div`
@@ -388,15 +401,17 @@ export const StyledLogoBox = styled.div`
 export const StyledArticle = styled.article`
   width: 50%;
   margin: 0 auto;
-  height: 90vh;
-  overflow-y: scroll;
-  ::-webkit-scrollbar {
-    display: none;
-  }
 
   ${media.tablet`
     width: 90%;
   `}
+`
+
+export const ArticleTitle = styled.h1`
+  font-weight: 700;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+  font-size: 2.1rem;
 `
 
 export const StyledButton = styled.button`

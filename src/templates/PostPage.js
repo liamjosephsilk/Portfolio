@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import BlogLayout from "../components/BlogLayout"
 import CodeBlock from "../components/CodeBlock"
 import ReactMarkdown from "react-markdown"
+import { ArticleTitle } from "../lib/styles"
 
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
@@ -29,7 +30,7 @@ const PostPage = ({
               d="M0,24,28,48ZM28,0,0,24Z"
               transform="translate(565.5 148.5)"
               fill="none"
-              stroke="#fff"
+              stroke="#000000"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="7"
@@ -37,7 +38,7 @@ const PostPage = ({
           </g>
         </svg>
       </Link>
-      <h1>{post.title}</h1>
+      <ArticleTitle>{post.title}</ArticleTitle>
       <ReactMarkdown
         source={post.bodyMarkdown}
         renderers={{ code: CodeBlock }}
