@@ -1,10 +1,11 @@
 import React from "react"
 
-const ScrolledHeader = () => {
+import { StyledScrolledHeader, StyledScrolledHeaderTitle } from "../lib/styles"
+const ScrolledHeader = ({ title }) => {
   return (
-    <div>
-      <h2>ScrolledHeader</h2>
-    </div>
+    <StyledScrolledHeader>
+      <StyledScrolledHeaderTitle>{title}</StyledScrolledHeaderTitle>
+    </StyledScrolledHeader>
   )
 }
 

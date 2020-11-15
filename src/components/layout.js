@@ -11,7 +11,6 @@ import "typeface-poppins"
 import "typeface-ibm-plex-sans"
 
 import Header from "./header"
-import Navigation from "../components/Navigation"
 import SEO from "./seo.js"
 import { GlobalStyle, StyledLayout, StyledMain } from "../lib/styles"
 

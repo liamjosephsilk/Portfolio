@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import { StyledCard, StyledCardTitle, StyledCardLink } from "../lib/styles"
 import LineBreak from "../components/LineBreak"
 

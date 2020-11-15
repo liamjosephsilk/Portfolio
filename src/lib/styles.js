@@ -449,12 +449,38 @@ export const StyledBlogFooter = styled.footer`
   color: #fff;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin: 4rem 0;
   border-radius: 3px;
+  padding: 1rem;
 `
 
 export const StyledFooterCopy = styled.p`
   font-family: "IBM Plex Mono";
   color: black;
-  margin: 0 0.3rem 0 0;
+  margin: 0 0.1rem 0 0;
+  text-align: center;
+  line-height: 1.6;
+`
+
+export const StyledFooterLink = styled.a``
+
+export const StyledScrolledHeader = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  z-index: 200;
+  backdrop-filter: blur(8px);
+  padding: 1.5rem 0;
+`
+
+export const StyledScrolledHeaderTitle = styled.h3`
+  font-weight: 500;
+  font-size: 0.9rem;
+  width: 40%;
+  text-align: center;
 `

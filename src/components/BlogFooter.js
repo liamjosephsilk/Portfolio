@@ -1,10 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
 import {
   StyledBlogFooter,
-  StyledSocialLink,
-  StyledSocialList,
   StyledFooterCopy,
+  StyledFooterLink,
 } from "../lib/styles"
 
 const BlogFooter = () => {
@@ -13,7 +11,9 @@ const BlogFooter = () => {
       <StyledFooterCopy>Let's Connect!</StyledFooterCopy>
       <StyledFooterCopy>
         I sometimes hang around{" "}
-        <Link to="https://twitter.com/liam_silk">@liam_silk</Link>
+        <StyledFooterLink to="https://twitter.com/liam_silk">
+          @liam_silk
+        </StyledFooterLink>
       </StyledFooterCopy>
     </StyledBlogFooter>
   )

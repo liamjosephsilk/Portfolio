@@ -1,11 +1,5 @@
 import React from "react"
-import Logo from "../components/Logo"
-import {
-  StyledHeader,
-  StyledInfo,
-  StyledSocialList,
-  StyledSocialLink,
-} from "../lib/styles"
+import { StyledHeader } from "../lib/styles"
 
 import Navigation from "./Navigation"
 import Heading from "./Heading"
