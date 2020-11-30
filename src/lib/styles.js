@@ -83,9 +83,6 @@ li {
   
 }
 
-
-
-
 @media screen and (max-width: 425px) {
   body {
     overflow: scroll;
@@ -102,10 +99,32 @@ li {
 export const Title = styled.h1`
   font-size: ${props => props.fontSize || "3rem"};
   font-weight: 700;
-  width: 30%;
+  max-width: 100%;
   line-height: 4rem;
   text-align: center;
   font-family: ${props => props.fontFamily || "inherit"};
+
+  ${media.desktop`
+    width: 60%;
+  `}
+
+  ${media.laptop`
+    width: 30%;
+  `}
+
+  ${media.smLaptop`
+    width: 65%;
+    `}
+
+  ${media.tablet`
+    width: 95%;
+  `}
+
+  ${media.mobile`
+    font-size: 2rem;
+    width: 100%;
+    line-height: 2.5rem;
+  `} 
 `
 
 export const SubTitle = styled.h2`
@@ -119,6 +138,26 @@ export const SubTitle = styled.h2`
   color: #7e7e7e;
   font-family: ${props => props.fontFamily || "inherit"};
   margin-bottom: ${props => props.marginBottom || 0};
+
+  ${media.desktop`
+    width: 60%;
+  `}
+
+  ${media.laptop`
+    width: 30%;
+  `}
+
+  ${media.smLaptop`
+    width: 50%;
+    `}
+
+  ${media.tablet`
+    width: 95%;
+  `}
+
+  ${media.mobile`
+    width: 100%;
+  `} 
 `
 
 export const StyledLayout = styled.div`
@@ -168,6 +207,14 @@ export const AboutWrapper = styled.section`
   align-items: center;
   flex-direction: column;
   margin-top: 4rem;
+
+  ${media.tablet`
+    margin-top: 1.5rem;
+  `}
+
+  ${media.mobile`
+      padding-bottom: 2rem;
+  `}
 `
 
 export const ArticlesIndexWrapper = styled.section`
@@ -185,6 +232,26 @@ export const PageCopy = styled.p`
   width: 50%;
   line-height: 1.8;
   color: ${props => props.color || "inherit"};
+
+  ${media.desktop`
+    width: 30%;
+  `}
+
+  ${media.laptop`
+    width: 50%;
+  `}
+
+  ${media.smLaptop`
+    width: 70%;
+    `}
+
+  ${media.tablet`
+    width: 95%;
+  `}
+
+  ${media.mobile`
+    width: 100%;
+  `} 
 `
 
 export const StyledHeading = styled.h3`
@@ -201,16 +268,6 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   ${media.smLaptop`
     padding-right: 2rem;
-  `}
-
-  ${media.mobile &&
-  media.tablet`
-    width: 100%;
-    padding-right: 0;
-    height: 40vh;
-
-    margin-bottom: 2rem;
-
   `}
 `
 
@@ -264,10 +321,27 @@ export const StyledCard = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  ${media.mobile &&
-  media.tablet`
-    padding: 1rem 0.5rem;
-  `};
+
+  
+  ${media.desktop`
+      width: 30%;
+  `}
+
+  ${media.laptop`
+    width: 50%;
+  `}
+
+  ${media.smLaptop`
+    width: 70%;
+    `}
+
+  ${media.tablet`
+    width: 95%;
+  `}
+
+  ${media.mobile`
+    width: 100%;
+  `}
 `
 
 export const StyledCardLink = styled(Link)`
@@ -305,8 +379,13 @@ export const StyledCardTitle = styled.h2`
   text-align: center;
   width: 80%;
 
-  ${media.mobile`
-    font-size: 1.5rem;
+  ${media.smLaptop`
+    width: 90%;
+    font-size: 1.4rem;
+  `}
+  ${media.tablet`
+    font-size: 1.3rem;
+    width: 95%;
   `}
 `
 
@@ -402,6 +481,9 @@ export const StyledArticle = styled.article`
   width: 50%;
   margin: 0 auto;
 
+  ${media.smLaptop`
+    width: 75%;
+  `}
   ${media.tablet`
     width: 90%;
   `}

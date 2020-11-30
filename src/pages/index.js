@@ -20,7 +20,6 @@ const BlogListQuery = graphql`
     }
   }
 `
-
 const IndexPage = () => (
   <StaticQuery
     query={BlogListQuery}
@@ -28,19 +27,6 @@ const IndexPage = () => (
       <Layout>
         <SEO title="Liam Silk | | Blog" />
         <IndexWrapper>
-          {/* {data.graphcms.posts.map(post => {
-            const { title, id, slug, tag } = post
-            return (
-              <Card
-                tags={["javascript"]}
-                title={title}
-                id={id}
-                key={id}
-                slug={`/posts/${slug}`}
-                tag={tag}
-              />
-            )
-          })} */}
           <Title>Hello, I’m a Front end developer. </Title>
           <SubTitle fontSize="1.1rem" fontFamily="IBM Plex Mono">
             I build interfaces using modern front end web technologies.
