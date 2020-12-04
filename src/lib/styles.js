@@ -166,7 +166,6 @@ export const StyledLayout = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  
 
   ${media.desktop`
     width: 100%;
@@ -177,14 +176,13 @@ export const StyledLayout = styled.div`
     `}
 
   ${media.tablet`
-    width: 85%;
-    margin: 0 auto;
+    width: 100%;
     flex-direction: column;
   `}
 
   ${media.mobile`
     flex-direction: column;
-    width: 95%;
+    width: 100%;
   `}
 `
 
@@ -266,6 +264,7 @@ export const StyledHeader = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   ${media.smLaptop`
     padding-right: 2rem;
   `}
