@@ -7,9 +7,10 @@
 
 import React from "react"
 import PropTypes from "prop-types"
+import "typeface-poppins"
+import "typeface-ibm-plex-sans"
 
 import Header from "./header"
-import Navigation from "../components/Navigation"
 import SEO from "./seo.js"
 import { GlobalStyle, StyledLayout, StyledMain } from "../lib/styles"
 
@@ -19,10 +20,7 @@ const Layout = ({ children }) => {
       <SEO title="Liam Silk" />
       <GlobalStyle />
       <Header />
-      <StyledMain>
-        <Navigation />
-        {children}
-      </StyledMain>
+      <StyledMain>{children}</StyledMain>
     </StyledLayout>
   )
 }

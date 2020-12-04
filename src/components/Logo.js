@@ -1,8 +1,12 @@
 import React from "react"
-import { StyledLogoBox } from "../lib/styles"
+import { StyledLogoBox, StyledSpan } from "../lib/styles"
 
 const Logo = () => {
-  return <StyledLogoBox>LS</StyledLogoBox>
+  return (
+    <StyledLogoBox>
+      <StyledSpan>Liam</StyledSpan>Silk
+    </StyledLogoBox>
+  )
 }
 
 export default Logo
