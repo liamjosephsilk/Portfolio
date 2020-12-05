@@ -551,17 +551,13 @@ export const StyledScrolledHeader = styled.div`
   top: 0;
   left: 0;
   width: 100vw;
-  background: rgba(255, 255, 255, 0.5);
+  background: inherit;
   display: flex;
-  justify-content: center;
+  height: 8px;
   z-index: 200;
-  backdrop-filter: blur(8px);
-  padding: 1.5rem 0;
 `
 
-export const StyledScrolledHeaderTitle = styled.h3`
-  font-weight: 500;
-  font-size: 0.9rem;
-  width: 40%;
-  text-align: center;
+export const StyledScrolledBar = styled.div`
+  width: ${props => props.width || 0};
+  background: green;
 `

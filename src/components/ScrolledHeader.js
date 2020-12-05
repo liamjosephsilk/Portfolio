@@ -1,15 +1,10 @@
 import React from "react"
 
-import { StyledScrolledHeader, StyledScrolledHeaderTitle } from "../lib/styles"
-const ScrolledHeader = ({ title }) => {
+import { StyledScrolledHeader, StyledScrolledBar } from "../lib/styles"
+const ScrolledHeader = ({ percent }) => {
   return (
     <StyledScrolledHeader>
-      <StyledScrolledHeaderTitle>
-        {title}
-        <div class="one two three">
-          <h1>This is a h1</h1>
-        </div>
-      </StyledScrolledHeaderTitle>
+      <StyledScrolledBar width={`${percent}%`}></StyledScrolledBar>
     </StyledScrolledHeader>
   )
 }
