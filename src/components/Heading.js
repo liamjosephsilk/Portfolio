@@ -1,11 +1,13 @@
 import React from "react"
-import { StyledHeading, StyledSpan } from "../lib/styles"
+import { StyledHeading, StyledSpan, StyledHeadingLink } from "../lib/styles"
 
 const Heading = () => {
   return (
-    <StyledHeading>
-      <StyledSpan>Liam</StyledSpan>Silk
-    </StyledHeading>
+    <StyledHeadingLink to="/">
+      <StyledHeading>
+        <StyledSpan>Liam</StyledSpan>Silk
+      </StyledHeading>
+    </StyledHeadingLink>
   )
 }
 

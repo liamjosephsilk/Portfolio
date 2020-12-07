@@ -13,9 +13,6 @@ const Navigation = props => {
     <StyledSection>
       <StyledNav>
         <StyledList>
-          <StyledLink to="/" activeClassName="active">
-            <StyledListItem>Home</StyledListItem>
-          </StyledLink>
           <StyledLink to="/about" activeClassName="active">
             <StyledListItem>About</StyledListItem>
           </StyledLink>
