@@ -256,6 +256,11 @@ export const StyledHeading = styled.h3`
   font-size: 1rem;
 `
 
+export const StyledHeadingLink = styled(Link)`
+  font-style: normal;
+  color: #202123;
+`
+
 export const StyledSpan = styled.span`
   font-weight: 200;
 `
