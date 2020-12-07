@@ -24,20 +24,9 @@ const PostPage = ({
     console.log({ articleHeight, contentScrolled })
   }
 
-  useEffect(() => {
-    if (typeof window !== undefined) {
-      // const article = document.querySelector("article")
-      // const articleHeight = article.scrollHeight
-      // const contentScrolled = window.scrollY
-      // console.log(contentScrolled)
-
-      window.addEventListener("scroll", updateScrollPercentage)
-  })
-
   return (
     <BlogLayout>
-      <SEO title={`${post.title} | | Liam Silk`} />
-      <ScrolledHeader />
+      <SEO title={`${post.title} | Liam Silk`} />
       <Link to="/articles">
         <img height=" 20px" width="20px" src={backArrow} alt="" />
       </Link>
