@@ -3,8 +3,8 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Hero from '../components/organisms/Hero'
 
-import { IndexWrapper, Title, SubTitle } from "../lib/styles"
 
 const BlogListQuery = graphql`
   {
@@ -20,18 +20,17 @@ const BlogListQuery = graphql`
     }
   }
 `
+
+const t = "liam";
+
+
 const IndexPage = () => (
   <StaticQuery
     query={BlogListQuery}
     render={data => (
       <Layout>
         <SEO title="Liam Silk | | Blog" />
-        <IndexWrapper>
-          <Title>Hello, I’m a Front end developer. </Title>
-          <SubTitle fontSize="1.1rem" fontFamily="IBM Plex Mono">
-            I build interfaces using modern front end web technologies.
-          </SubTitle>
-        </IndexWrapper>
+        <Hero />
       </Layout>
     )}
   />

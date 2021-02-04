@@ -6,27 +6,21 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
-import "typeface-poppins"
-import "typeface-ibm-plex-sans"
+import styled from "styled-components"
 
-import Header from "./header"
 import SEO from "./seo.js"
-import { GlobalStyle, StyledLayout, StyledMain } from "../lib/styles"
+import { GlobalStyle } from "../lib/globalstyles"
+
+const Wrapper = styled.div``
 
 const Layout = ({ children }) => {
   return (
-    <StyledLayout>
+    <Wrapper>
       <SEO title="Liam Silk" />
       <GlobalStyle />
-      <Header />
-      <StyledMain>{children}</StyledMain>
-    </StyledLayout>
+      <main>{children}</main>
+    </Wrapper>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
