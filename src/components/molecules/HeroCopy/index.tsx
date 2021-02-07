@@ -17,7 +17,7 @@ type HeroCopyTypes<U> = {
     height?: string
 } & U;
 
-const HeroCopy: FC<HeroCopyTypes<OrganismType>> = ({colStart, colEnd, height}) => {
+const HeroCopy: FC<HeroCopyTypes<OrganismType>> = ({ colStart, colEnd, height }) => {
     return (
         <Wrapper colStart={colStart} colEnd={colEnd} height={height}>
             <Heading 
@@ -31,11 +31,11 @@ const HeroCopy: FC<HeroCopyTypes<OrganismType>> = ({colStart, colEnd, height}) =
             </Heading>
             <Heading 
             level={1} 
-            size="60px" 
+            size="100px" 
             weight="900" 
             color="white"
             spacing="0.15rem"
-            line="60px"
+            line="100px"
             mt="20px;"
             
             >

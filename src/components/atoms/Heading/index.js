@@ -7,6 +7,8 @@ const styles = css`
   margin: 0;
   margin-top: ${props => props.mt || "0"};
   margin-bottom: ${props => props.mb || "0"};
+  margin-right: ${props => props.mr || "0"};
+  margin-left: ${props => props.ml || "0"};
   color: ${props => props.color};
   text-transform: ${props => props.transform || "uppercase"};
   letter-spacing: ${props => props.spacing || "0.1rem"};

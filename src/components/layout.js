@@ -5,21 +5,26 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 
 import SEO from "./seo.js"
 import { GlobalStyle } from "../lib/globalstyles"
+import Menu from "../components/organisms/Menu/index"
+import MenuProvider from "../context/Menu/MenuProvider"
 
 const Wrapper = styled.div``
 
 const Layout = ({ children }) => {
   return (
-    <Wrapper>
-      <SEO title="Liam Silk" />
-      <GlobalStyle />
-      <main>{children}</main>
-    </Wrapper>
+    <MenuProvider>
+      <Wrapper>
+        <SEO title="Liam Silk" />
+        <GlobalStyle />
+        <Menu />
+        <main>{children}</main>
+      </Wrapper>
+    </MenuProvider>
   )
 }
 

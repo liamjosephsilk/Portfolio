@@ -1,4 +1,5 @@
 import React from "react"
+import styled from 'styled-components'
 import { StaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -21,9 +22,9 @@ const BlogListQuery = graphql`
   }
 `
 
-const t = "liam";
-
-
+const NextSection = styled.section `
+  height: 2000px;
+`
 const IndexPage = () => (
   <StaticQuery
     query={BlogListQuery}
@@ -31,6 +32,9 @@ const IndexPage = () => (
       <Layout>
         <SEO title="Liam Silk | | Blog" />
         <Hero />
+        <NextSection>
+          <p>next section</p>
+        </NextSection>
       </Layout>
     )}
   />

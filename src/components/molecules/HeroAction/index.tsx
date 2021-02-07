@@ -1,6 +1,8 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import {OrganismType} from '../../../lib/types'
+import Button from '../../atoms/Button/index'
+import HeroScroll from '../HeroScroll/index'
 
 type HeroCopyTypes<U> = {
     height?: string
@@ -8,7 +10,7 @@ type HeroCopyTypes<U> = {
 
 const Wrapper = styled.div`
     grid-column-start: ${props => props.colStart || 1};
-    grid-column-end: ${props => props.colEnd || 12};
+    grid-column-end: ${props => props.colEnd || 13};
     display: flex;
     justify-content: space-between;
 `
@@ -16,8 +18,8 @@ const Wrapper = styled.div`
 const HeroAction: FC<HeroCopyTypes<OrganismType>> = ({colStart, colEnd}) => {
     return (
         <Wrapper colStart={colStart} colEnd={colEnd}>
-            <span>One</span>
-            <span>Two</span>
+            <Button content="Get in Touch" />
+            <HeroScroll />
         </Wrapper>
     )
 }
