@@ -10,7 +10,7 @@ import HeroAction from '../../molecules/HeroAction/index'
 const Wrapper = styled.section`
     background: ${props => props.backgroundColour || "#F2203E"};
     height: 100vh;
-    padding: 30px 0;
+    padding: 50px 0;
 `
 
 type HeroTypes = {

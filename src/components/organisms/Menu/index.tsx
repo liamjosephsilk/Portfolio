@@ -1,8 +1,9 @@
 import React, { FC, useContext, useState } from 'react'
 import styled from 'styled-components'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 import Navigation from '../../molecules/Navigation/index'
+import CloseButton from '../../atoms/CloseButton/index'
 
 import { MenuContext } from '../../../context/Menu/MenuProvider'
 
@@ -14,6 +15,7 @@ const Wrapper = styled(motion.div)`
     height: 100%;
     display: flex;
     justify-content: flex-end;
+    flex-direction: row;
     z-index: 1000;
 `
 
@@ -23,39 +25,31 @@ const Overlay = styled(motion.div)`
 
 const variants = {
     open: {
-        x: 0,
-        
+        x: 0,  
     },
     close: {
         x: 2000,
+        transition: {
+            type: "tween",
+            duration: 0.5,
+            ease: "easeInOut",
+            delay: 0.4
+        }
     }
 }
 
 const transition = {
     type: "tween",
-    duration: 0.3,
+    duration: 0.4,
     ease: "easeInOut"
 }
 
-const childVariants = {
-    open: {
-        width: "30%",
-        transition: {delay: 0.3}
-    },
-    close: {
-        width: 0
-    }
-}
-
-
-
 const Menu: FC = () => {
-    const { open, setOpen } = useContext(MenuContext)
+    const { open } = useContext(MenuContext)
+
     return(
-        <Wrapper animate={open ? "open" : "close"} variants={variants} transition={transition} initial={false}>
-            <Overlay variants={childVariants}>hello</Overlay>
-            <Navigation />
-            
+        <Wrapper animate={open ? "open" : "close"} variants={variants} transition={transition} initial={false}>  
+            <Navigation  />     
         </Wrapper> 
     )
 }

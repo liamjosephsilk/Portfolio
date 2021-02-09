@@ -3,8 +3,7 @@ export type OrganismType = {
     colEnd?: number
 }
 
-
 export type MenuContextType = {
     open: boolean,
-    setOpen: (input: boolean) => void
+    setOpen: (open: boolean) => void
 }

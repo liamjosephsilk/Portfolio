@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from '../components/organisms/Hero'
+import Latest from '../components/organisms/Latest'
 
 
 const BlogListQuery = graphql`
@@ -22,9 +23,6 @@ const BlogListQuery = graphql`
   }
 `
 
-const NextSection = styled.section `
-  height: 2000px;
-`
 const IndexPage = () => (
   <StaticQuery
     query={BlogListQuery}
@@ -32,9 +30,7 @@ const IndexPage = () => (
       <Layout>
         <SEO title="Liam Silk | | Blog" />
         <Hero />
-        <NextSection>
-          <p>next section</p>
-        </NextSection>
+        <Latest />
       </Layout>
     )}
   />

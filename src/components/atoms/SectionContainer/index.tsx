@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 type SectionContainerTypes = {
     children?: ReactNode,
-    rows?: string
+    rows?: string,
+    gap?: string
 }
 
 const Container = styled.div `
@@ -12,13 +13,13 @@ const Container = styled.div `
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 0.5rem;
+    grid-gap: ${props => props.gap || "0.5rem"};
     grid-template-rows: ${props => props.rows || "auto"};
 `
 
-const SectionContainer: FC<SectionContainerTypes> = ({children, rows}) => {
+const SectionContainer: FC<SectionContainerTypes> = ({children, rows, gap}) => {
     return (
-        <Container rows={rows}>
+        <Container rows={rows} gap={gap}>
             {children}
         </Container>
     )

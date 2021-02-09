@@ -30,5 +30,4 @@ const Icon: FC<IconTypes> = ({ icon, color, fontSize }) => {
     return <Wrapper color={color} fontSize={fontSize} dangerouslySetInnerHTML={{__html: svg}} />
 }
 
-
 export default Icon

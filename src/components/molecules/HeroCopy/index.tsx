@@ -14,10 +14,13 @@ const Wrapper = styled.div `
 `
 
 type HeroCopyTypes<U> = {
-    height?: string
+    height?: string,
+    textSize: string,
 } & U;
 
-const HeroCopy: FC<HeroCopyTypes<OrganismType>> = ({ colStart, colEnd, height }) => {
+// TODO: Text size of heading is causing responsive bug. Fixx at a later date when Making Thinkgs responsive.
+
+const HeroCopy: FC<HeroCopyTypes<OrganismType>> = ({ colStart, colEnd, height, textSize }) => {
     return (
         <Wrapper colStart={colStart} colEnd={colEnd} height={height}>
             <Heading 
