@@ -1,8 +1,7 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import Heading from '../../atoms/Heading/index'
-import Icon from '../../atoms/Icon'
+import { Heading, Icon } from '@atoms'
 
 const Wrapper = styled(motion.div) `
     display: flex;

@@ -1,11 +1,8 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
 
-import SectionContainer from '../../atoms/SectionContainer'
-import LatestList from '../../molecules/LatestList'
-import IconLink from '../../atoms/IconLink'
-
+import { SectionContainer, IconLink } from '@atoms'
+import { LatestList } from '@molecules'
 import { Article } from '../../molecules/LatestList'
 
 
@@ -23,31 +20,17 @@ const ArticlesWrapper = styled.div`
     padding-top: 30px;
 `
 
-const Latest: FC = () => {
-    const articles: Article[] = [
-        {
-            title: 'title one',
-            tag: 'React'
-        },
-        {
-            title: 'title two',
-            tag: 'Life'
-        },
-        {
-            title: 'title three',
-            tag: 'name'
-        },
-        {
-            title: 'title 4',
-            tag: 'Another'
-        }
-    ]
+type LatestProps = {
+    data: []
+}
+
+const Latest: FC<LatestProps> = ({ data }) => {
     return (
         <Wrapper>
-            <LatestList articles={articles} />
+            <LatestList articles={data} />
             <SectionContainer>
                 <ArticlesWrapper>
-                    <IconLink icon="arrow" fontSize="12px" link="/articles" text="Latest Articles" />
+                    <IconLink icon="arrow" fontSize="12px" link="/articles" text="View All Articles" />
                 </ArticlesWrapper>
             </SectionContainer>
             

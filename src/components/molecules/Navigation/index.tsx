@@ -3,10 +3,7 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
 import { pageRoutes } from '../../../lib/pageRoutes'
-
-import MenuLink from '../../atoms/MenuLink/index'
-import CloseButton from '../../atoms/CloseButton/index'
-import Logo from '../../atoms/Logo/index'
+import { MenuLink, CloseButton, Logo} from '@atoms'
 
 
 const Nav = styled.nav`

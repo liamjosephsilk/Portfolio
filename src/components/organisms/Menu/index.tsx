@@ -1,9 +1,8 @@
-import React, { FC, useContext, useState } from 'react'
+import React, { FC, useContext } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-import Navigation from '../../molecules/Navigation/index'
-import CloseButton from '../../atoms/CloseButton/index'
+import { Navigation } from '@molecules'
 
 import { MenuContext } from '../../../context/Menu/MenuProvider'
 

@@ -11,7 +11,19 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-sitemap`,
-
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@atoms": "src/components/atoms/index",
+          "@molecules": "src/components/molecules/index",
+          "@organisms": "src/components/organisms/index",
+          "@layouts": "src/components/layouts/index",
+          "@utils": "src/lib/utils/index",
+        },
+        extensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+      },
+    },
     {
       resolve: `gatsby-plugin-robots-txt`,
       oprions: {

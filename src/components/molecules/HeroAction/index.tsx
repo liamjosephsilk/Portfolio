@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import {OrganismType} from '../../../lib/types'
-import Button from '../../atoms/Button/index'
-import HeroScroll from '../HeroScroll/index'
+import { Button } from '@atoms'
+import { HeroScroll } from '@molecules'
 
 type HeroCopyTypes<U> = {
     height?: string
@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 const HeroAction: FC<HeroCopyTypes<OrganismType>> = ({colStart, colEnd}) => {
     return (
         <Wrapper colStart={colStart} colEnd={colEnd}>
-            <Button content="Get in Touch" />
+            <Button overlayBackground="#222222" overlayColor="#F2203E" content="Get in Touch" />
             <HeroScroll />
         </Wrapper>
     )

@@ -1,11 +1,7 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import SectionContainer from '../../atoms/SectionContainer/index'
-import Header from '../../molecules/Header/index'
-import HeroCopy from '../../molecules/HeroCopy/index'
-import HeroAction from '../../molecules/HeroAction/index'
-
-
+import { SectionContainer } from '@atoms'
+import { Header, HeroCopy, HeroAction } from '@molecules'
 
 const Wrapper = styled.section`
     background: ${props => props.backgroundColour || "#F2203E"};

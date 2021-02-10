@@ -1,6 +1,5 @@
 import React, {FC} from 'react'
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
 
 const Card = styled.div`
     /* background: #F2203E; */
@@ -8,6 +7,7 @@ const Card = styled.div`
     grid-column-end: span 6;
     height: 200px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -20,14 +20,29 @@ const Card = styled.div`
     }
 `
 
+const TagContainer = styled.div`
+    border: 2px solid white;
+    padding: 0.2rem 1rem;
+    margin-top: 20px;
+`
+
 type ArticleCardProps = {
     title: string
+    id: string,
+    slug: string,
+    tag: string
 }
 
-const ArticleCard: FC<ArticleCardProps> = ({ title }) => {
+const ArticleCard: FC<ArticleCardProps> = ({ title, id, slug, tag }) => {
     return (
         <Card>
-            <h3>{ title }</h3>
+            <div style={{background: "green", textAlign: "center"}}>
+                <h3>{ title }</h3>
+            </div>
+            
+            <TagContainer>
+                <p>{tag}</p>
+            </TagContainer>
         </Card>
     )
 }

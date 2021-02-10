@@ -6,6 +6,8 @@ import { MenuContextType } from '../../../lib/types'
 
 type ButtonTypes = {
     content: string,
+    overlayBackground: string,
+    overlayColor: string
 }
 
 const StyledButton = styled(motion.button)`
@@ -33,14 +35,14 @@ const ButtonOverlay = styled(motion.div)`
     left: 0;
     bottom: 0;
     width: 100%;
-    background: #222222;
+    background: ${props => props.background || '#222222'};
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 0;
 `
 
-const Button: FC<ButtonTypes> = ({ content }) => {
+const Button: FC<ButtonTypes> = ({ content, overlayBackground, overlayColor}) => {
     const [buttonOverlay, setButtonOverlay] = useState(false)
     
 
@@ -49,14 +51,14 @@ const Button: FC<ButtonTypes> = ({ content }) => {
             onMouseLeave={() => setButtonOverlay(false) } 
             onMouseEnter={() => setButtonOverlay(true)} 
             onClick={()=> console.log('clicked')}
-            whileHover={{borderColor: '#222', color: '#f2203e', cursor: 'pointer' }} 
+            whileHover={{borderColor: overlayBackground, color: overlayColor, cursor: 'pointer' }} 
             transition={{duration: 0.3}}
             
             >
             
 
             <AnimatePresence>
-                {buttonOverlay && (<ButtonOverlay initial={{height: 0}} animate={{height: '100%'}} transition={{duration: 0.2}} exit={{height: 0}}></ButtonOverlay>) }
+                {buttonOverlay && (<ButtonOverlay background={overlayBackground} initial={{height: 0}} animate={{height: '100%'}} transition={{duration: 0.2}} exit={{height: 0}}></ButtonOverlay>) }
             </AnimatePresence>
             
             <ButtonContent>{content}</ButtonContent>

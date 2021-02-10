@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 import { OrganismType } from '../../../lib/types';
 
-import Heading from '../../atoms/Heading/index'
+import { Heading } from '@atoms'
 
 const Wrapper = styled.div `
     height: ${props => props.height};
