@@ -8,6 +8,7 @@ import Logo from './Logo/index'
 import MenuButton from './MenuButton/index'
 import MenuLink from './MenuLink/index'
 import SectionContainer from './SectionContainer/index'
+import Paragraph from './Paragraph/index'
 // import SEO from './SEO/seo'
 
 export {
@@ -21,4 +22,5 @@ export {
     MenuButton,
     MenuLink,
     SectionContainer,
+    Paragraph
 }
