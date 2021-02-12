@@ -33,7 +33,7 @@ const Hero: FC<HeroTypes> = ({ backgroundColour, type, height, mt }) => {
                 <SectionContainer gap="50px" rows="70vh">
                     <AboutCopy />
                 </SectionContainer>
-            }  x
+            }
             {type === "ARTICLES" && 
                 <SectionContainer>
                     <Heading weight="900" size="60px" color="white" mt="30px" mb="30px" sizeMobile="40px" sizeTablet="40px">Articles</Heading>
