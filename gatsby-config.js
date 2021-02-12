@@ -6,12 +6,24 @@ module.exports = {
   siteMetadata: {
     title: `| Front End Web Developer`,
     description: `Personal blog for Front End Developer Liam Silk. Based in Kingston Upon Hull, United Kingdom.`,
-    author: ``,
+    author: `Liam Silk`,
     siteUrl: "https://www.liamsilk.dev",
   },
   plugins: [
     `gatsby-plugin-sitemap`,
-
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@atoms": "src/components/atoms/index",
+          "@molecules": "src/components/molecules/index",
+          "@organisms": "src/components/organisms/index",
+          "@layouts": "src/components/layouts/index",
+          "@utils": "src/lib/utils/index",
+        },
+        extensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+      },
+    },
     {
       resolve: `gatsby-plugin-robots-txt`,
       oprions: {
@@ -34,6 +46,19 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/articles`,
+        name: `articles`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
       },
     },
     `gatsby-transformer-sharp`,
