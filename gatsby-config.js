@@ -6,7 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `| Front End Web Developer`,
     description: `Personal blog for Front End Developer Liam Silk. Based in Kingston Upon Hull, United Kingdom.`,
-    author: ``,
+    author: `Liam Silk`,
     siteUrl: "https://www.liamsilk.dev",
   },
   plugins: [
@@ -46,6 +46,19 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/articles`,
+        name: `articles`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
       },
     },
     `gatsby-transformer-sharp`,

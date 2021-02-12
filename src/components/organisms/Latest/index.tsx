@@ -18,6 +18,14 @@ const ArticlesWrapper = styled.div`
     display: flex;
     justify-content: flex-end;
     padding-top: 30px;
+
+    @media screen and (max-width: 900px) {
+        grid-column-start: 5;
+    }
+
+     @media screen and (min-width: 1900px) {
+        grid-column-start: 5;
+    }
 `
 
 type LatestProps = {
@@ -30,10 +38,9 @@ const Latest: FC<LatestProps> = ({ data }) => {
             <LatestList articles={data} />
             <SectionContainer>
                 <ArticlesWrapper>
-                    <IconLink icon="arrow" fontSize="12px" link="/articles" text="View All Articles" />
+                    <IconLink icon="rightarrow" fontSize="12px" link="/articles" text="View All Articles" />
                 </ArticlesWrapper>
             </SectionContainer>
-            
         </Wrapper>
     )
 }

@@ -10,6 +10,8 @@ import MenuLink from './MenuLink/index'
 import SectionContainer from './SectionContainer/index'
 import Paragraph from './Paragraph/index'
 // import SEO from './SEO/seo'
+import CodeBlock from './CodeBlock'
+import A from './A/index'
 
 export {
     ArticleCard,
@@ -22,5 +24,7 @@ export {
     MenuButton,
     MenuLink,
     SectionContainer,
-    Paragraph
+    Paragraph,
+    CodeBlock,
+    A
 }

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
 import { Navigation } from '@molecules'
+import { Icon } from '@atoms'
 
 import { MenuContext } from '../../../context/Menu/MenuProvider'
 
@@ -48,7 +49,7 @@ const Menu: FC = () => {
 
     return(
         <Wrapper animate={open ? "open" : "close"} variants={variants} transition={transition} initial={false}>  
-            <Navigation  />     
+            <Navigation  />  
         </Wrapper> 
     )
 }

@@ -15,6 +15,20 @@ const Container = styled.div `
     grid-template-columns: repeat(12, 1fr);
     grid-gap: ${props => props.gap || "0.5rem"};
     grid-template-rows: ${props => props.rows || "auto"};
+
+    @media screen and (max-width: 760px) {
+        width: 90%;
+        grid-gap: ${props => props.gapMobile || "0.5rem"};
+        grid-template-rows: ${props => props.rowsMobile || "auto"};
+    }
+
+    @media screen and (max-width: 900px) {
+        width: 80%;
+    }
+
+    @media screen and (min-width: 1900px) {
+        width: 40%;
+    }
 `
 
 const SectionContainer: FC<SectionContainerTypes> = ({children, rows, gap}) => {

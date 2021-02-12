@@ -40,6 +40,10 @@ const HeroCopy: FC<HeroCopyTypes<OrganismType>> = ({ colStart, colEnd, height, t
             spacing="0.15rem"
             line="100px"
             mt="20px;"
+            sizeMobile="40px"
+            lineMobile="42px"
+            sizeTablet="64px"
+            lineTablet="68px"
             
             >
                 Crafting User Interfaces

@@ -23,6 +23,7 @@ const StyledButton = styled(motion.button)`
     font-weight: 600;
     font-size: 12px;
     letter-spacing: 0.13rem;
+    max-height: 50px;
 `
 
 const ButtonContent = styled.p `

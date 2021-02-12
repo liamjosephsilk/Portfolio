@@ -2,8 +2,7 @@ import React, { FC } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-import Icon from '../Icon'
-import Heading from '../Heading'
+import { Heading, Icon } from '@atoms'
 
 type IconLinkProps = {
     icon: string,
@@ -35,7 +34,10 @@ const IconLink: FC<IconLinkProps> = ({ icon, fontSize, link, text }) => {
                 weight="800" 
                 color="white"
                 spacing="0.17rem"
-                mr="15px" >
+                mr="15px" 
+                sizeMobile="10px"
+                sizeTablet="10px"
+                >
                     {text}
             </Heading>
             <Icon icon={icon} fontSize={fontSize} />

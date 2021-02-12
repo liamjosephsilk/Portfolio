@@ -1,4 +1,5 @@
 export enum HeroEnum {
     IndexPage = "INDEX",
-    AboutPage = "ABOUT"
+    AboutPage = "ABOUT",
+    ArticlesPage = "ARTICLES"
 }

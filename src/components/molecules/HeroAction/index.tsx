@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import styled from 'styled-components'
 import {OrganismType} from '../../../lib/types'
 import { Button } from '@atoms'
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 `
 
 const HeroAction: FC<HeroCopyTypes<OrganismType>> = ({colStart, colEnd}) => {
-    return (
+   return (
         <Wrapper colStart={colStart} colEnd={colEnd}>
             <Button overlayBackground="#222222" overlayColor="#F2203E" content="Get in Touch" />
             <HeroScroll />

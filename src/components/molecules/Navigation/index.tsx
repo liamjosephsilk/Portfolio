@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
 import { pageRoutes } from '../../../lib/pageRoutes'
-import { MenuLink, CloseButton, Logo} from '@atoms'
+import { MenuLink, CloseButton, Logo, Icon } from '@atoms'
 
 
 const Nav = styled.nav`
@@ -35,7 +35,12 @@ const LinkList = styled(motion.ul)`
     flex-direction: column;
     align-items: center;
 `
-
+const SocialLinks = styled(motion.div)`
+    display: flex;
+    width: 10%;
+    justify-content: space-between;
+    margin-top: 30px;
+`
 const variants = {
     open: {
         opacity: 1,
@@ -68,6 +73,21 @@ const LogoVariants = {
     }
 }
 
+const SocialVariants = {
+    open: {
+        opacity: 1,
+        transition: {
+            delay: 0.5
+        }
+    },
+    close: {
+        opacity: 0,
+        transition: {
+            delay: 0.2
+        }
+    }
+}
+
 const Navigation: FC = () => {
     return (
         <Nav>
@@ -81,7 +101,18 @@ const Navigation: FC = () => {
                 {pageRoutes.links.map(({ name, path}, i) => (
                     <MenuLink key={i} name={name} index={i} link={path} />
                 ))}
-            </LinkList>        
+            </LinkList>  
+            <SocialLinks variants={SocialVariants}>
+                <a href="https://github.com/liamjosephsilk">
+                    <Icon icon="github" color="#F2203E" fontSize="30px"/>
+                </a>
+                <a href="https://twitter.com/liam_silk">
+                    <Icon icon="twitter" color="#F2203E" fontSize="30px"/>
+                </a>
+                <a href="https://www.linkedin.com/in/liam-silk-11907b157/">
+                    <Icon icon="linkedin" fontSize="30px" color="#F2203E" />  
+                </a>
+            </SocialLinks>       
         </Nav>
     )
 }

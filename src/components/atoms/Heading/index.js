@@ -13,6 +13,16 @@ const styles = css`
   text-transform: ${props => props.transform || "uppercase"};
   letter-spacing: ${props => props.spacing || "0.1rem"};
   line-height: ${props => props.line || "1rem"};
+
+  @media screen and (max-width: 590px) {
+    font-size: ${props => props.sizeMobile || "1.2rem"};
+    line-height: ${props => props.lineMobile || "1.6"};
+  }
+
+  @media (min-width: 591px) and (max-width: 760px) {
+    font-size: ${props => props.sizeTablet || "1.2rem"};
+    line-height: ${props => props.lineTablet || "1.6"};
+  }
 `
 
 const Heading = styled(({ level, children, ...props }) =>

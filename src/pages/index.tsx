@@ -9,16 +9,20 @@ import { Hero, Latest, Contact } from '@organisms'
 
 const BlogListQuery = graphql`
   {
-    graphcms {
-      posts {
-        id
-        slug
-        title
+    allMdx {
+    nodes {
+			id
+      slug
+      frontmatter {
+				title
         tag
       }
     }
   }
+  }
 `
+
+
 
 const IndexPage = () => (
   <StaticQuery
@@ -27,7 +31,7 @@ const IndexPage = () => (
       <Layout header={false}>
         {/* <SEO title="Liam Silk | | Blog" /> */}
         <Hero type={HeroEnum.IndexPage}/>
-        <Latest data={data.graphcms.posts} />
+        <Latest data={data.allMdx.nodes} />
         <Contact />
       </Layout>
     )}

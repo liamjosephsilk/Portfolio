@@ -28,6 +28,8 @@ const Contact: FC = () => {
                     weight="900"
                     color="white"
                     spacing="0.15rem"
+                    sizeMobile="30px"
+                    sizeTablet="36px"
                     >
                         Want to Chat?
                     </Heading>

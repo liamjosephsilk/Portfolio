@@ -5,6 +5,7 @@ import HeroScroll from './HeroScroll/index'
 import LatestList from './LatestList/index'
 import Navigation from './Navigation/index'
 import AboutCopy from './AboutCopy/index'
+import ArticleLink from './ArticleLink/index'
 
 export {
     Header,
@@ -13,5 +14,6 @@ export {
     HeroScroll,
     LatestList,
     Navigation,
-    AboutCopy
+    AboutCopy,
+    ArticleLink
 }

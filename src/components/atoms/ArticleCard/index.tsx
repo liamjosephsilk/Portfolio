@@ -1,15 +1,20 @@
 import React, {FC} from 'react'
 import styled from 'styled-components'
+import { Heading } from '@atoms'
+import { Link } from 'gatsby'
 
-const Card = styled.div`
+const Card = styled(Link)`
     /* background: #F2203E; */
     border: 3px solid white;
     grid-column-end: span 6;
-    height: 200px;
+    min-height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    color: white;
+    padding: 0 20px;
 
     transition: all ease-in-out 0.3s;
 
@@ -17,6 +22,10 @@ const Card = styled.div`
         background: #F2203E;
         border-color: #F2203E;
         transform: scale(1.05)
+    }
+
+    @media screen and (max-width: 760px) {
+        grid-column-end: span 12;
     }
 `
 
@@ -35,8 +44,8 @@ type ArticleCardProps = {
 
 const ArticleCard: FC<ArticleCardProps> = ({ title, id, slug, tag }) => {
     return (
-        <Card>
-            <div style={{background: "green", textAlign: "center"}}>
+        <Card to={slug}>
+            <div style={{ textAlign: "center"}}>
                 <h3>{ title }</h3>
             </div>
             

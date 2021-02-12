@@ -3,24 +3,40 @@ import styled from 'styled-components'
 import { Heading, Paragraph } from '@atoms'
 
 const Wrapper = styled.div`
-    grid-column-end: span 6;
+    grid-column-end: span 7;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media screen and (max-width: 760px) {
+        grid-column-end: span 12;
+    }
+
+    @media screen and (max-width: 1200px)
+    {
+       grid-column-end: span 10; 
+    }
 `
 
 const ImageWrapper = styled.div`
-    background: blue;
-    grid-column-end: span 6;
+    display: none;
+    grid-column-end: span 1;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media screen and (max-width: 760px) {
+        grid-column-end: span 1;
+        height: 300px;
+        display: none;
+    }
 `
 const Image = styled.div`
     height: 400px;
     background: yellow;
+    display: none;
 `
 
 const AboutCopy: FC = () => {

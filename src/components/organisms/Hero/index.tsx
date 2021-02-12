@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
-import { SectionContainer } from '@atoms'
+import { SectionContainer, Heading } from '@atoms'
 import { Header, HeroCopy, HeroAction, AboutCopy } from '@molecules'
 import { HeroEnum } from '../../../lib/enums'
 
@@ -28,13 +28,17 @@ const Hero: FC<HeroTypes> = ({ backgroundColour, type, height, mt }) => {
                     <HeroCopy colEnd={8}/>
                     <HeroAction />
                 </SectionContainer>
-
             } 
             {type === "ABOUT" && 
                 <SectionContainer gap="50px" rows="70vh">
                     <AboutCopy />
                 </SectionContainer>
-            }  
+            }  x
+            {type === "ARTICLES" && 
+                <SectionContainer>
+                    <Heading weight="900" size="60px" color="white" mt="30px" mb="30px" sizeMobile="40px" sizeTablet="40px">Articles</Heading>
+                </SectionContainer>
+            }
         </Wrapper>
     )
 }

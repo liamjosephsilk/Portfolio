@@ -6,6 +6,11 @@ import { Heading, Icon } from '@atoms'
 const Wrapper = styled(motion.div) `
     display: flex;
     align-items: center;
+    display:none;
+
+    @media screen and (max-width: 590px) {
+        display: none;
+    }
 `
 const IconContainer = styled(motion.div) `
     display: flex;
@@ -25,7 +30,8 @@ const HeroScroll: FC = () => {
             weight="800" 
             color="white"
             spacing="0.17rem"
-            mr="10px;"
+            mr="10px"
+            sizeTablet="12px"
             >
                 Scroll Down
             </Heading>

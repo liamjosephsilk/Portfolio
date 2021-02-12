@@ -1,5 +1,7 @@
 
 // need to add types here to make it stronger
+
+
 export const pageRoutes = {
     links: [
         {
