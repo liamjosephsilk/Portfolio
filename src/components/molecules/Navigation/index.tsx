@@ -37,9 +37,13 @@ const LinkList = styled(motion.ul)`
 `
 const SocialLinks = styled(motion.div)`
     display: flex;
-    width: 10%;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: center;
     margin-top: 30px;
+
+    && a {
+        margin: 0 10px;
+    }
 `
 const variants = {
     open: {
@@ -104,13 +108,13 @@ const Navigation: FC = () => {
             </LinkList>  
             <SocialLinks variants={SocialVariants}>
                 <a href="https://github.com/liamjosephsilk">
-                    <Icon icon="github" color="#F2203E" fontSize="30px"/>
+                    <Icon icon="github" color="#F2203E" fontSize="24px"/>
                 </a>
                 <a href="https://twitter.com/liam_silk">
-                    <Icon icon="twitter" color="#F2203E" fontSize="30px"/>
+                    <Icon icon="twitter" color="#F2203E" fontSize="24px"/>
                 </a>
                 <a href="https://www.linkedin.com/in/liam-silk-11907b157/">
-                    <Icon icon="linkedin" fontSize="30px" color="#F2203E" />  
+                    <Icon icon="linkedin" fontSize="24px" color="#F2203E" />  
                 </a>
             </SocialLinks>       
         </Nav>
