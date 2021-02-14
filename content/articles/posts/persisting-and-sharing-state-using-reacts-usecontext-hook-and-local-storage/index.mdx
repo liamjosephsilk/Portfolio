@@ -11,33 +11,33 @@ If you want to look deeper at the API check out the React documentation [React D
 
 Let's set up a project using create react app.
 
-```javascript
+```bash
 yarn create react-app my-context-app
 ```
 
 Let's remove all the boilerplate that was given to us and start fresh.
 
-```
+```javascript
 // src/App.js
 
-import React from "react";
+import React from "react"
 
-import "./App.css";
+import "./App.css"
 
 function App() {
   return (
     <div className="App">
       <h1>Context API</h1>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
 ```
 
 We'll create a file called themes and export it.
 
-```
+```javascript
 // src/themes.js
 
 export const themes = {
@@ -49,7 +49,7 @@ export const themes = {
     foreground: "#ffffff",
     background: "#222222",
   },
-};
+}
 ```
 
 ## Context API
@@ -62,19 +62,17 @@ There are three elements to the API:
 
 Create a file called theme-context.js.
 
-```
+```javascript
 // src/theme-context.js
-import React, {createContext} from 'react'
-import { themes } from "./themes";
+import React, { createContext } from "react"
+import { themes } from "./themes"
 
 // create context
-export const ThemeContext = createContext(themes.dark);
+export const ThemeContext = createContext(themes.dark)
 
 // create context provider
 export function ThemeProvider({ children, value }) {
-  return (
-    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }
 ```
 
@@ -86,34 +84,34 @@ The provider takes one **prop**, value, but will be passing that down from the A
 
 We need to use the provider and wrap any components inside it that want to consume it. When any component wants to consume the context, it looks to the nearest provider.
 
-```
+```javascript
 // src/App.js
 
-import React, { useState } from "react";
-import { ThemeProvider } from "./theme-context";
-import { themes } from "./themes";
+import React, { useState } from "react"
+import { ThemeProvider } from "./theme-context"
+import { themes } from "./themes"
 
-import "./App.css";
+import "./App.css"
 
 function App() {
-  const [theme, setTheme] = useState(themes.light);
+  const [theme, setTheme] = useState(themes.light)
 
   const appStyle = {
     background: theme.background,
     color: theme.foreground,
     height: "100vh",
     margin: "0",
-  };
+  }
   return (
     <ThemeProvider value={theme}>
       <div className="App" style={appStyle}>
         <h1>Context API</h1>
       </div>
     </ThemeProvider>
-  );
+  )
 }
 
-export default App;
+export default App
 ```
 
 We wrap all the elements in the provider and I have used the useState hook to set the value of the context to the light values of the theme object we created earlier.
@@ -124,9 +122,9 @@ How do we consume the context?
 
 ## useContext
 
-```
-import {useContext} from 'react'
-import { ThemeContext } from "../theme-context";
+```javascript
+import { useContext } from "react"
+import { ThemeContext } from "../theme-context"
 
 // inside our component before render.
 
@@ -137,14 +135,14 @@ Earlier, we exported the create context function, and inside any component that 
 
 Let's create a component folder and inside create a toggleButton.js file.
 
-```
+```javascript
 // src/components/toggleButton.js
 
-import React, { useContext } from "react";
-import { ThemeContext } from "../theme-context";
+import React, { useContext } from "react"
+import { ThemeContext } from "../theme-context"
 
 export default function ToggleButton({ toggle }) {
-  const theme = useContext(ThemeContext);
+  const theme = useContext(ThemeContext)
   return (
     <button
       style={{ background: theme.background, color: theme.foreground }}
@@ -152,7 +150,7 @@ export default function ToggleButton({ toggle }) {
     >
       Toggle Theme
     </button>
-  );
+  )
 }
 ```
 
@@ -162,39 +160,39 @@ Let's use the toggle button to change the state and re-render to any consumers.
 
 Let's use the useState hook to update the state using a toggle function and pass that into the toggle props on our button.
 
-```
+```javascript
 const toggleDark = () => {
-    theme === themes.dark ? setTheme(themes.light) : setTheme(themes.dark);
-  };
+  theme === themes.dark ? setTheme(themes.light) : setTheme(themes.dark)
+}
 
-  <ToggleButton toggle={toggleDark} />
+;<ToggleButton toggle={toggleDark} />
 ```
 
 The updated app component should look like this.
 
-```
+```javascript
 // src/App.js
 
-import React, { useState } from "react";
-import { ThemeProvider } from "./theme-context";
-import { themes } from "./themes";
+import React, { useState } from "react"
+import { ThemeProvider } from "./theme-context"
+import { themes } from "./themes"
 
-import ToggleButton from "./components/toggleButton";
+import ToggleButton from "./components/toggleButton"
 
-import "./App.css";
+import "./App.css"
 
 function App() {
-  const [theme, setTheme] = useState(themes.light);
+  const [theme, setTheme] = useState(themes.light)
 
   const toggleDark = () => {
-    theme === themes.dark ? setTheme(themes.light) : setTheme(themes.dark);
-  };
+    theme === themes.dark ? setTheme(themes.light) : setTheme(themes.dark)
+  }
   const appStyle = {
     background: theme.background,
     color: theme.foreground,
     height: "100vh",
     margin: "0",
-  };
+  }
 
   return (
     <ThemeProvider value={theme}>
@@ -203,10 +201,10 @@ function App() {
         <ToggleButton toggle={toggleDark} />
       </div>
     </ThemeProvider>
-  );
+  )
 }
 
-export default App;
+export default App
 ```
 
 This is all great and now the state should be changing and re-rendering the button component, however if you refresh the page, the state doesn't persist.
@@ -219,39 +217,38 @@ For this, I have used the [useLocalStorage](https://usehooks.com/useLocalStorage
 
 All I had to do to persist data using this hook was to replace the useState with this and voila! The theme persists after.
 
-```
-import { useLocalStorage } from "./hooks/useLocalStorage";
+```javascript
+import { useLocalStorage } from "./hooks/useLocalStorage"
 
-const [theme, setTheme] = useLocalStorage("theme", themes.light);
+const [theme, setTheme] = useLocalStorage("theme", themes.light)
 ```
 
 Our final App component should look like this.
 
-```
+```javascript
 // src/App.js
 
-import React, { useState } from "react";
-import { ThemeProvider } from "./theme-context";
-import { useLocalStorage } from "./hooks/useLocalStorage";
-import { themes } from "./themes";
+import React, { useState } from "react"
+import { ThemeProvider } from "./theme-context"
+import { useLocalStorage } from "./hooks/useLocalStorage"
+import { themes } from "./themes"
 
-import ToggleButton from "./components/toggleButton";
+import ToggleButton from "./components/toggleButton"
 
-import "./App.css";
+import "./App.css"
 
 function App() {
-  const [theme, setTheme] = useLocalStorage("theme", themes.light);
-
+  const [theme, setTheme] = useLocalStorage("theme", themes.light)
 
   const toggleDark = () => {
-    theme === themes.dark ? setTheme(themes.light) : setTheme(themes.dark);
-  };
+    theme === themes.dark ? setTheme(themes.light) : setTheme(themes.dark)
+  }
   const appStyle = {
     background: theme.background,
     color: theme.foreground,
     height: "100vh",
     margin: "0",
-  };
+  }
 
   return (
     <ThemeProvider value={theme}>
@@ -260,11 +257,10 @@ function App() {
         <ToggleButton toggle={toggleDark} />
       </div>
     </ThemeProvider>
-  );
+  )
 }
 
-export default App;
-
+export default App
 ```
 
 If you got to the end, thank you for reading and any feedback is appreciated!
