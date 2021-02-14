@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import {motion} from 'framer-motion'
 import { MDXProvider } from '@mdx-js/react'
-import { Paragraph, MenuButton, Heading, CodeBlock, Icon, A } from '@atoms'
+import { Paragraph, MenuButton, Heading, CodeBlock, Icon } from '@atoms'
 import { Layout } from '@layouts'
 
 const components = {
