@@ -12,6 +12,7 @@ import Paragraph from './Paragraph/index'
 // import SEO from './SEO/seo'
 import CodeBlock from './CodeBlock'
 import A from './A/index'
+import PageProgress from './PageProgress/index'
 
 export {
     ArticleCard,
@@ -26,5 +27,6 @@ export {
     SectionContainer,
     Paragraph,
     CodeBlock,
-    A
+    A,
+    PageProgress
 }

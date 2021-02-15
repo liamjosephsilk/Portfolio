@@ -57,7 +57,6 @@ const Button: FC<ButtonTypes> = ({ content, overlayBackground, overlayColor}) =>
             
             >
             
-
             <AnimatePresence>
                 {buttonOverlay && (<ButtonOverlay background={overlayBackground} initial={{height: 0}} animate={{height: '100%'}} transition={{duration: 0.2}} exit={{height: 0}}></ButtonOverlay>) }
             </AnimatePresence>
