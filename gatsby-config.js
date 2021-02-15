@@ -4,7 +4,7 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    title: `| Front End Web Developer`,
+    title: `Front End Web Developer`,
     description: `Personal blog for Front End Developer Liam Silk. Based in Kingston Upon Hull, United Kingdom.`,
     author: `Liam Silk`,
     siteUrl: "https://www.liamsilk.dev",
@@ -26,7 +26,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-robots-txt`,
-      oprions: {
+      options: {
         host: `https://www.liamsilk.dev`,
         policy: [{ userAgent: "*", allow: "/" }],
       },

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { StaticQuery, graphql } from "gatsby"
 import { HeroEnum } from '../lib/enums'
 import { Layout } from '@layouts'
-// import { SEO } from "@atoms"
+import { SEO } from "@atoms"
 import { Hero, Latest, Contact } from '@organisms'
 
 
@@ -29,7 +29,7 @@ const IndexPage = () => (
     query={BlogListQuery}
     render={data => (
       <Layout header={false}>
-        {/* <SEO title="Liam Silk | | Blog" /> */}
+        <SEO title="Liam Silk" />
         <Hero type={HeroEnum.IndexPage}/>
         <Latest data={data.allMdx.nodes} />
         <Contact />

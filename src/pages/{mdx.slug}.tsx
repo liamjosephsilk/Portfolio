@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import styled from 'styled-components'
 import MDXWrapProvider from '../context/MDX/MDXWrapProvider'
-import { Heading, PageProgress } from '@atoms'
+import { Heading, PageProgress, SEO } from '@atoms'
 import useScrollPrgress from '../hooks/useScrollProgress'
 import useScrollProgress from '../hooks/useScrollProgress'
 
@@ -28,7 +28,7 @@ const Wrapper = styled.article`
 const ArticlePage: FC = ({ data }) => {
     const {
         body, 
-        frontmatter: { title }
+        frontmatter: { title, description }
     } = data.mdx
 
     const scrollProgress = useScrollProgress();
@@ -37,6 +37,7 @@ const ArticlePage: FC = ({ data }) => {
         <>
             <MDXWrapProvider>
                 <Wrapper>
+                  <SEO title={title} description={description}></SEO>
                   <PageProgress scrollPercentage={scrollProgress}/>
                   <Heading weight="900" size="30px" line="1.3" color="#F2203E">{title}</Heading>
                   <MDXRenderer>{body}</MDXRenderer>
@@ -56,6 +57,7 @@ export const query = graphql`
       body
       frontmatter {
         title
+        description
       }
     }
   }
