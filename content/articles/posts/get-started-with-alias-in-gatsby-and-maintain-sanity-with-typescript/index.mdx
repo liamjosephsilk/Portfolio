@@ -1,0 +1,160 @@
+---
+title: Get started with Alias’ in Gatsby and maintain sanity with Typescript
+description: Use Alias’ in our Gatsby site. Increase our own developer experience and keep our sanity by making it work with Typescript.
+tag: Gatsby
+---
+
+Depending on how big a project is, React modules can become exponentially nested.
+
+Who even does this? `import component from ../../../../components/component/index` ? And you will probably have many import statements at that.
+
+## There’s a Plugin for that
+
+One of the great benefits of Gatsby is the plugin ecosystem. I mean, there are so many, and that’s just fantastic. I could do this within webpack, but who wants to do that?
+
+The Gatsby alias plugin can abstract that away for us. gatsby-plugin-alias-imports. All we need to do is pass some options and rather than a super nested component, we can just `import component from '@path'`. Better still, if we use an `index.js`, we can export the the public interface and maybe even have something like this `import { component1, component2 } from '@path'`.
+
+Let’s get started.
+
+By the way, we are going to be using Typescript, but don’t worry, Gatsby has you covered. It comes ready to go.
+
+Thanks Gatsby!.
+
+## Set Up
+
+Assuming you have the Gatsby cli installed globally, if not go here and [this](https://www.gatsbyjs.com/docs/tutorial/part-zero/) will get you going.
+
+```bash
+gatsby new gatsby-alias-typescript
+```
+
+Let the cli do it’s thing and then we can get going.
+
+```bash
+cd gatsby-alias-typescript
+```
+
+We’ve got one plugin we need to install and that is `gatsby-plugin-alias-imports`.
+
+```bash
+npm i --save gatsby-plugin-alias-imports
+
+or
+
+yarn add gatsby-plugin-alias-imports
+```
+
+Let’s add to our `gatsby-config.js`.
+
+```javascript
+// gatsby-config.js
+{
+	...
+	plugins:
+  [
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@atoms": "src/components/atoms/index",
+        },
+        extensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+      },
+    },
+  ]
+}
+```
+
+I really like using an index module within a component structure and use it as a public interface.
+
+```bash
+src/
+  components/
+    atoms/
+      heading/
+        index.tsx
+    index.ts
+// rest of structure here
+```
+
+## Index
+
+The index file within my component structure will import all the components needed for that module and export them.
+
+```javascript
+// src/components/atoms/index.ts
+
+import Button from "./button"
+import Header from "./header"
+export { Button, Header }
+```
+
+Then anywhere in our application, we can import the components utilising the alias, thus making our life that little bit easier.
+
+```javascript
+// src/pages/index
+
+import React from "react"
+import { Button, Header } from "@atoms"
+
+const HomePage = () => {
+  return (
+    <>
+      <Header />
+      <Button />
+    </>
+  )
+}
+
+export default HomePage
+```
+
+Much nicer, right?
+
+But, wait a minute. I’m pretty sure Typescript will be yelling at us by this point.
+
+## Fix the Orange
+
+So under the hood, gatsby-plugin-alias-imports does the webpack work for us. But Typescript doesn't know about these paths and will be pretty upset by now.
+
+Let's add our conifg and fix this. In the root of our project add a `tsconfig.json`
+
+```javascript
+// tsconfig.json
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "jsx": "preserve",
+        "lib": [
+            "dom",
+            "es2015",
+            "es2017"
+        ],
+        "strict": true,
+        "noEmit": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "removeComments": false,
+        "baseUrl": "src",
+        "paths": {
+            "@atoms": [
+                "components/atoms/index"
+            ],
+        },
+    },
+    "include": [
+        "./src/**/*"
+    ]
+}
+```
+
+In our paths, add the modules as needed. This will fix our orange lines of doom and I definitely think this is worth the set up, as
+both my sanity and experience increases throughout a project.
+
+If you want to see an example, here's a [repo](https://github.com/liamjosephsilk/gatsby-alias-typescript-demo) to have a look at.
+
+If you got to the end, i'd appreciate any feedback. You can reach me on [Twitter](https://twitter.com/liam_silk).
