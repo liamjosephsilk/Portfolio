@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Layout } from '@layouts'
+import { SEO } from '@atoms'
 import { ArticleLink } from '@molecules'
 import { Hero } from '@organisms'
 import { HeroEnum } from '../lib/enums'
@@ -45,6 +46,7 @@ const ArticlesPage: FC<D> = ({ data }) => {
 
     return (
         <Layout header={true} >
+            <SEO title="Liam Silk | Articles" description="Where I write about Front End development, React, Gatsby and anything Jamstack and Javascript/Typescript."/>
             <Hero type={HeroEnum.ArticlesPage} height="auto" mt="30px" />
             <ArticlesWrapper>
                 {data.allMdx.nodes.map(({ frontmatter, timeToRead, slug, id, excerpt }) => (
