@@ -1,0 +1,64 @@
+---
+title: Getting to the point with optional chaining
+description: Let's learn about optional chaining feature in Javascript in ES2020
+tag: Javascript
+---
+
+Optional chaining is a new feature in Javascript implemented in ES2020. Javascript just keeps on delivering, right?
+
+## Why ?.
+
+- Changes the way we access properties on objects that are deeply nested.
+- Removes the need to null check.
+- Reduces errors if a value is either null or undefined
+
+Say we have some media object.
+
+```javascript
+const media = {
+  id: 1,
+  ensclosure: {
+    url: "Some CDN link",
+    metadata: {
+      id: 12345678910,
+      name: "Example",
+      type: "mp4",
+      duration: 4000,
+    },
+  },
+}
+```
+
+Let's grab some metadata, using the chaining operator we are used to.
+
+```javascript
+const duration = media.enclosure.metadata.duration
+
+// 4000
+```
+
+In this example, we know that the metadata is available. However, imagine this comes from an API where the metadata might be optional.
+
+Normally, we would have to check if metadata is available before grabbing the value we want.
+
+```javascript
+if (media.enclosure.metadata) {
+  const duration = media.enclosure.metadata.duration
+
+  // duration 4000
+}
+```
+
+This way, if metadata was available, we would get the data we want returning without an error being thrown. Howevever, if the value wasn't available, we would get `undefined`.
+
+Now, I like getting straight to the point. So wouldn't it be great if we didn't have to use the if statement all together `?`.
+
+## How about this ?.
+
+```javascript
+const duration = media.enclosure.metadata?.duration
+const item = media.enclosure.metadata?.item
+
+// duration = 4000
+// item = undefined
+```
