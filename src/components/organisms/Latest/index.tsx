@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 import { SectionContainer, IconLink } from '@atoms'
 import { LatestList } from '@molecules'
-import { Article } from '../../molecules/LatestList'
 
 
 const Wrapper = styled.section `

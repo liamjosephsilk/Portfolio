@@ -51,7 +51,7 @@ const variants2 = {
 const CloseButton: FC = () => {
     const { open, setOpen } = useContext(MenuContext)
     return (
-        <Button onClick={() => setOpen(!open)} whileHover={{cursor: "pointer"}}>
+        <Button onClick={() => setOpen(!open)} whileHover={{cursor: "pointer"}} aria-label="Close Menu">
         <Item variants={variants1}/>
         <Item variants={variants2}/>   
         </Button>

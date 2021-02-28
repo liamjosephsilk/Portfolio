@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React from 'react'
 import Highlight, {defaultProps} from 'prism-react-renderer'
 import styled from 'styled-components'
 import theme from 'prism-react-renderer/themes/github'

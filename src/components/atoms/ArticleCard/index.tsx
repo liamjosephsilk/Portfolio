@@ -1,6 +1,5 @@
 import React, {FC} from 'react'
 import styled from 'styled-components'
-import { Heading } from '@atoms'
 import { Link } from 'gatsby'
 
 const Card = styled(Link)`
@@ -42,7 +41,7 @@ type ArticleCardProps = {
     tag: string
 }
 
-const ArticleCard: FC<ArticleCardProps> = ({ title, id, slug, tag }) => {
+const ArticleCard: FC<ArticleCardProps> = ({ title, slug, tag }) => {
     return (
         <Card to={slug}>
             <div style={{ textAlign: "center"}}>

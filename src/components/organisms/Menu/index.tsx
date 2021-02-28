@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
 import { Navigation } from '@molecules'
-import { Icon } from '@atoms'
 
 import { MenuContext } from '../../../context/Menu/MenuProvider'
 
@@ -17,10 +16,6 @@ const Wrapper = styled(motion.div)`
     justify-content: flex-end;
     flex-direction: row;
     z-index: 1000;
-`
-
-const Overlay = styled(motion.div)`
-    background: white;
 `
 
 const variants = {

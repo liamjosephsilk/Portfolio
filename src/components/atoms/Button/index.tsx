@@ -1,8 +1,6 @@
-import React, { FC, useContext, useEffect, useRef, useState } from 'react'
+import React, { FC, useState } from 'react'
 import styled from 'styled-components'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MenuContext } from '../../../context/Menu/MenuProvider'
-import { MenuContextType } from '../../../lib/types'
 
 type ButtonTypes = {
     content: string,

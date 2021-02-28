@@ -1,5 +1,4 @@
 import React from "react"
-import styled from 'styled-components'
 import { StaticQuery, graphql } from "gatsby"
 import { HeroEnum } from '../lib/enums'
 import { Layout } from '@layouts'
