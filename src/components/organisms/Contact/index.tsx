@@ -1,7 +1,6 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
 import { Heading, SectionContainer, Button } from '@atoms'
-import {  } from '@molecules'
 
 const Wrapper = styled.section`
     background: #F2203E;

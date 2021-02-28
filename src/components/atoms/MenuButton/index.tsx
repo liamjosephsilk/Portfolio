@@ -39,6 +39,7 @@ const MenuButton: FC = () => {
             animate={hover ? "open" : "close"}
             variants={variants}
             whileHover={{cursor: 'pointer'}}
+            aria-label="Open Menu"
             >
             {items.map((i) => (
                 <ButtonItem key={i} item={i}/>
