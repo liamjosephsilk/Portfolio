@@ -7,8 +7,8 @@ import Heading from "./Heading"
 const Header = () => {
   return (
     <StyledHeader>
-      <Heading />
-      <Navigation />
+      {/* <Heading /> */}
+      {/* <Navigation /> */}
     </StyledHeader>
   )
 }
